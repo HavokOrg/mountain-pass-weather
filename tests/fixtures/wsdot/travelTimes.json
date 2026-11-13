@@ -1,0 +1,102 @@
+[
+  {
+    "TravelTimeID": 114,
+    "Name": "Snoqualmie Pass EB",
+    "Description": "North Bend to Ellensburg Eastbound",
+    "Distance": 75,
+    "CurrentTime": 88,
+    "AverageTime": 73,
+    "TimeUpdated": "/Date(1794552600000-0800)/",
+    "StartPoint": {
+      "Description": "I-90 @ 436th Ave / Exit 34",
+      "RoadName": "I-90",
+      "Direction": null,
+      "MilePost": 34,
+      "Latitude": 47.4957,
+      "Longitude": -121.7868
+    },
+    "EndPoint": {
+      "Description": "I-90 @ Ellensburg Exit 109",
+      "RoadName": "I-90",
+      "Direction": null,
+      "MilePost": 109,
+      "Latitude": 46.9965,
+      "Longitude": -120.5478
+    }
+  },
+  {
+    "TravelTimeID": 115,
+    "Name": "Snoqualmie Pass WB",
+    "Description": "Ellensburg to North Bend Westbound",
+    "Distance": 78,
+    "CurrentTime": 75,
+    "AverageTime": 73,
+    "TimeUpdated": "/Date(1794552600000-0800)/",
+    "StartPoint": {
+      "Description": "I-90 @ Ellensburg Exit 109",
+      "RoadName": "I-90",
+      "Direction": null,
+      "MilePost": 109,
+      "Latitude": 46.9965,
+      "Longitude": -120.5478
+    },
+    "EndPoint": {
+      "Description": "I-90 @ North Bend Exit 31",
+      "RoadName": "I-90",
+      "Direction": null,
+      "MilePost": 31,
+      "Latitude": 47.4957,
+      "Longitude": -121.7868
+    }
+  },
+  {
+    "TravelTimeID": 2,
+    "Name": "Everett-Seattle",
+    "Description": "Everett to Seattle",
+    "Distance": 25,
+    "CurrentTime": 31,
+    "AverageTime": 30,
+    "TimeUpdated": "/Date(1794552900000-0800)/",
+    "StartPoint": {
+      "Description": "",
+      "RoadName": "I-5",
+      "Direction": null,
+      "MilePost": 192,
+      "Latitude": 47.97,
+      "Longitude": -122.2
+    },
+    "EndPoint": {
+      "Description": "",
+      "RoadName": "I-5",
+      "Direction": null,
+      "MilePost": 165,
+      "Latitude": 47.6,
+      "Longitude": -122.33
+    }
+  },
+  {
+    "TravelTimeID": 116,
+    "Name": "Unavailable route",
+    "Description": "Reports 0 when there is no data",
+    "Distance": 10,
+    "CurrentTime": 0,
+    "AverageTime": 12,
+    "TimeUpdated": "/Date(1794552900000-0800)/",
+    "StartPoint": {
+      "Description": "",
+      "RoadName": "I-90",
+      "Direction": null,
+      "MilePost": 30,
+      "Latitude": 47.5,
+      "Longitude": -121.8
+    },
+    "EndPoint": {
+      "Description": "",
+      "RoadName": "I-90",
+      "Direction": null,
+      "MilePost": 35,
+      "Latitude": 47.5,
+      "Longitude": -121.7
+    }
+  }
+]

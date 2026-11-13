@@ -1,12 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import rawConfig from '../config/passes.json';
-import { PASSES, parsePassConfig } from '../src/config';
-import { DataError } from '../src/data/validate';
+import { PASSES } from '../src/config.ts';
+import { parsePassConfig, wsdotPassUrl } from '../src/data/passConfig.ts';
+import { DataError } from '../src/data/validate.ts';
 
 interface RawPass {
   id: string;
   summit: { latitude: number; longitude: number; elevationFt: number };
   approaches: { side: string }[];
+  wsdot: Record<string, unknown>;
   alertRadiusMiles: number;
 }
 
@@ -29,6 +31,35 @@ describe('pass config', () => {
       expect(pass.wsdot.weatherStationId).toBeGreaterThan(0);
       expect(pass.avalancheZone.name).not.toBe('');
     }
+  });
+
+  it('links each pass to its WSDOT feeds', () => {
+    expect(PASSES.map((pass) => pass.wsdot.passId)).toEqual([11, 10, 12, 1]);
+    const snoqualmie = PASSES[0];
+    expect(snoqualmie?.wsdot.travelTimeIds).toEqual([114, 115]);
+    expect(snoqualmie?.wsdot.cameraIds).toBeNull();
+    expect(PASSES[1]?.wsdot.travelTimeIds).toEqual([]);
+    if (snoqualmie) {
+      expect(wsdotPassUrl(snoqualmie)).toBe('https://wsdot.com/travel/real-time/mountainpasses/snoqualmie');
+    }
+  });
+
+  it('rejects WSDOT ids that are not positive whole numbers', () => {
+    const config = freshConfig();
+    firstPass(config).wsdot.passId = -3;
+    expect(() => parsePassConfig(config)).toThrow(/passId/);
+  });
+
+  it('rejects page slugs that could break out of the WSDOT URL', () => {
+    const config = freshConfig();
+    firstPass(config).wsdot.pageSlug = '../../evil?x=';
+    expect(() => parsePassConfig(config)).toThrow(/pageSlug/);
+  });
+
+  it('accepts a hand-picked camera list', () => {
+    const config = freshConfig();
+    firstPass(config).wsdot.cameraIds = [1100, 9428];
+    expect(parsePassConfig(config)[0]?.wsdot.cameraIds).toEqual([1100, 9428]);
   });
 
   it('rejects duplicate ids', () => {

@@ -1,0 +1,107 @@
+[
+  {
+    "MountainPassId": 11,
+    "MountainPassName": "Snoqualmie Pass I-90",
+    "Latitude": 47.428347,
+    "Longitude": -121.419,
+    "ElevationInFeet": 3022,
+    "DateUpdated": "/Date(1794552000000-0800)/",
+    "RoadCondition": "Compact snow and ice in places.",
+    "WeatherCondition": "Light snow.",
+    "TemperatureInFahrenheit": 31,
+    "TravelAdvisoryActive": true,
+    "RestrictionOne": {
+      "TravelDirection": "Eastbound",
+      "RestrictionText": "Traction Tires Advised, Oversize Vehicles Prohibited."
+    },
+    "RestrictionTwo": {
+      "TravelDirection": "Westbound",
+      "RestrictionText": "Traction Tires Advised, Oversize Vehicles Prohibited."
+    }
+  },
+  {
+    "MountainPassId": 10,
+    "MountainPassName": "Stevens Pass US 2",
+    "Latitude": 47.746,
+    "Longitude": -121.0891,
+    "ElevationInFeet": 4061,
+    "DateUpdated": "/Date(1794538800000-0800)/",
+    "RoadCondition": "Bare and wet.",
+    "WeatherCondition": "Overcast.",
+    "TemperatureInFahrenheit": 36,
+    "TravelAdvisoryActive": false,
+    "RestrictionOne": {
+      "TravelDirection": "Eastbound",
+      "RestrictionText": "No restrictions"
+    },
+    "RestrictionTwo": {
+      "TravelDirection": "Westbound",
+      "RestrictionText": "No restrictions"
+    }
+  },
+  {
+    "MountainPassId": 12,
+    "MountainPassName": "White Pass  US 12",
+    "Latitude": 46.6383,
+    "Longitude": -121.3925,
+    "ElevationInFeet": 4500,
+    "DateUpdated": "/Date(1794546000000-0800)/",
+    "RoadCondition": "Bare and dry",
+    "WeatherCondition": "Overcast, areas of fog",
+    "TemperatureInFahrenheit": 39,
+    "TravelAdvisoryActive": false,
+    "RestrictionOne": {
+      "TravelDirection": "Eastbound",
+      "RestrictionText": "No restrictions"
+    },
+    "RestrictionTwo": {
+      "TravelDirection": "Westbound",
+      "RestrictionText": "No restrictions"
+    }
+  },
+  {
+    "MountainPassId": 1,
+    "MountainPassName": "Blewett Pass US 97",
+    "Latitude": 47.335,
+    "Longitude": -120.5786,
+    "ElevationInFeet": 4102,
+    "DateUpdated": "/Date(1794545100000-0800)/",
+    "RoadCondition": "Bare and dry.",
+    "WeatherCondition": "Overcast with areas of fog.",
+    "TemperatureInFahrenheit": 39,
+    "TravelAdvisoryActive": false,
+    "RestrictionOne": {
+      "TravelDirection": "Northbound",
+      "RestrictionText": "No restrictions"
+    },
+    "RestrictionTwo": {
+      "TravelDirection": "Southbound",
+      "RestrictionText": "No restrictions"
+    }
+  },
+  {
+    "MountainPassId": 3,
+    "MountainPassName": "Chinook Pass SR 410",
+    "Latitude": 46.8722,
+    "Longitude": -121.5164,
+    "ElevationInFeet": 5430,
+    "DateUpdated": "/Date(1794549600000-0800)/",
+    "RoadCondition": "Bare and dry",
+    "WeatherCondition": "Areas of fog",
+    "TemperatureInFahrenheit": null,
+    "TravelAdvisoryActive": false,
+    "RestrictionOne": {
+      "TravelDirection": "Eastbound",
+      "RestrictionText": "No restrictions"
+    },
+    "RestrictionTwo": {
+      "TravelDirection": "Westbound",
+      "RestrictionText": "No restrictions"
+    }
+  },
+  {
+    "MountainPassName": "Malformed record without an id",
+    "Latitude": 47,
+    "Longitude": -121
+  }
+]

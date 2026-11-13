@@ -273,6 +273,186 @@ a:focus-visible,
   border: 0;
 }
 
+.hero__source {
+  margin: 0.4rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.updated-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+/* ---------- WSDOT: conditions banner ---------- */
+
+.banner {
+  background: rgba(120, 72, 0, 0.38);
+  border-color: rgba(255, 200, 80, 0.45);
+}
+
+.banner__title {
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+}
+
+.banner__line {
+  margin: 0.2rem 0 0;
+  font-size: 0.95rem;
+}
+
+/* ---------- WSDOT: pass report ---------- */
+
+.report {
+  margin: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.report__row {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.75rem;
+}
+
+.report dt {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.report dd {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.report__restricted {
+  color: var(--warn);
+  font-weight: 600;
+}
+
+.card__footer {
+  margin: 0.65rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ---------- WSDOT: cameras ---------- */
+
+.camera {
+  position: relative;
+  margin: 0;
+}
+
+.camera a {
+  display: block;
+}
+
+.camera__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.camera__caption {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.camera--offline .camera__img {
+  visibility: hidden;
+}
+
+.camera--offline::after {
+  content: 'Image unavailable';
+  position: absolute;
+  inset: 0 0 auto;
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.camera-row {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+
+.camera-row::-webkit-scrollbar {
+  display: none;
+}
+
+.camera-row > li {
+  flex: 0 0 9.5rem;
+  scroll-snap-align: start;
+}
+
+/* ---------- WSDOT: travel times and alerts ---------- */
+
+.travel,
+.alerts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.travel__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.travel__route,
+.travel__note,
+.travel__minutes {
+  margin: 0;
+}
+
+.travel__note {
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.travel__note.is-slow {
+  color: var(--warn);
+  font-weight: 600;
+}
+
+.travel__minutes {
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+.alert__headline {
+  margin: 0;
+}
+
+.alert__meta {
+  margin: 0.2rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.notice p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
 /* ---------- Accessibility preferences ---------- */
 
 @media (prefers-reduced-motion: reduce) {

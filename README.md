@@ -10,8 +10,8 @@ Weather and live road conditions for Washington's mountain passes (**Snoqualmie,
 
 | Phase | What ships | Status |
 | --- | --- | --- |
-| 1 | Project skeleton, CI, GitHub Pages deploy, Snoqualmie forecast | In progress |
-| 2 | WSDOT data: pass report, cameras, alerts, travel times, summit weather stations | Planned |
+| 1 | Project skeleton, CI, GitHub Pages deploy, Snoqualmie forecast | Done |
+| 2 | WSDOT data: pass report, cameras, alerts, travel times, summit weather stations | Done (needs the `WSDOT_ACCESS_CODE` secret for live data) |
 | 3 | Apple-style UI: sky gradients, frosted cards, hourly + 10-day, swipe between passes | Planned |
 | 4 | Extras: NWS alerts, avalanche danger, snow level, sunrise/sunset, "Both sides" card | Planned |
 | 5 | Animated weather, installable app, offline support | Planned |
@@ -38,19 +38,22 @@ Weather and live road conditions for Washington's mountain passes (**Snoqualmie,
 You'll need Node 24 (see `.nvmrc`).
 
 ```bash
-npm ci            # install exact locked dependencies
-npm run dev       # http://localhost:5173/mountain-pass-weather/
-npm run check     # typecheck, lint, test, build
+npm ci                # install exact locked dependencies
+npm run sample:wsdot  # write sample WSDOT data to public/data/ (no key needed)
+npm run dev           # http://localhost:5173/mountain-pass-weather/
+npm run check         # typecheck, lint, test, build
 ```
 
 To change which passes appear, or their order, edit `config/passes.json`.
+
+To use live WSDOT data locally, put your own access code in a git-ignored `.env.local` (see `.env.example`) and run `npm run fetch:wsdot`.
 
 ## Privacy
 
 - No analytics, cookies, trackers, ads or accounts.
 - No location access: passes come from a fixed list.
 - The site sends no `Referer` header to the services it calls.
-- Your browser contacts only these services: GitHub Pages (the site itself), Open-Meteo, and later WSDOT (camera images), the National Weather Service and avalanche.org.
+- Your browser contacts only these services: GitHub Pages (the site itself and its WSDOT data), Open-Meteo, and WSDOT's camera image server. The National Weather Service and avalanche.org come later. Your browser never talks to WSDOT's API, and the access code never leaves GitHub Actions.
 
 ## Data sources and credits
 

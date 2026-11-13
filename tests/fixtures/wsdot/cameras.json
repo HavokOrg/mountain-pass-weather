@@ -1,0 +1,349 @@
+[
+  {
+    "CameraID": 9433,
+    "Title": "I-90 at MP 45.2: Tinkham Road",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/sc/090VC04526.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.401,
+    "DisplayLongitude": -121.547,
+    "CameraLocation": {
+      "RoadName": "I-90",
+      "MilePost": 45.2,
+      "Latitude": 47.401,
+      "Longitude": -121.547,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 9029,
+    "Title": "I-90 at MP 46.8: Denny Creek",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/sc/090VC04680.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.412,
+    "DisplayLongitude": -121.518,
+    "CameraLocation": {
+      "RoadName": "I-90",
+      "MilePost": 46.8,
+      "Latitude": 47.412,
+      "Longitude": -121.518,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 9426,
+    "Title": "I-90 at MP 48.1: Asahel Curtis",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/sc/090VC04810.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.404,
+    "DisplayLongitude": -121.487,
+    "CameraLocation": {
+      "RoadName": "I-90",
+      "MilePost": 48.1,
+      "Latitude": 47.404,
+      "Longitude": -121.487,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 1099,
+    "Title": "I-90 at MP 51.3: Franklin Falls",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/sc/090VC05130.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.419,
+    "DisplayLongitude": -121.429,
+    "CameraLocation": {
+      "RoadName": "I-90",
+      "MilePost": 51.3,
+      "Latitude": 47.419,
+      "Longitude": -121.429,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 1100,
+    "Title": "I-90 at MP 52: Snoqualmie Summit",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/sc/090VC05200.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.4245,
+    "DisplayLongitude": -121.4138,
+    "CameraLocation": {
+      "RoadName": "I-90",
+      "MilePost": 52,
+      "Latitude": 47.4245,
+      "Longitude": -121.4138,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 9428,
+    "Title": "I-90 at MP 53.4: East Snoqualmie Summit",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/sc/090VC05347.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.4135,
+    "DisplayLongitude": -121.39,
+    "CameraLocation": {
+      "RoadName": "I-90",
+      "MilePost": 53.4,
+      "Latitude": 47.4135,
+      "Longitude": -121.39,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 10296,
+    "Title": "I-90 at MP 54.5: Hyak Hill",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/sc/090vc05450.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.401,
+    "DisplayLongitude": -121.374,
+    "CameraLocation": {
+      "RoadName": "I-90",
+      "MilePost": 54.5,
+      "Latitude": 47.401,
+      "Longitude": -121.374,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 1102,
+    "Title": "I-90 at MP 55.1: Hyak",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/sc/090VC05517.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.394,
+    "DisplayLongitude": -121.365,
+    "CameraLocation": {
+      "RoadName": "I-90",
+      "MilePost": 55.1,
+      "Latitude": 47.394,
+      "Longitude": -121.365,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 10070,
+    "Title": "I-90 at MP 55.2: ",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/sc/090vc05520.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.3932,
+    "DisplayLongitude": -121.3638,
+    "CameraLocation": {
+      "RoadName": "I-90",
+      "MilePost": 55.2,
+      "Latitude": 47.3932,
+      "Longitude": -121.3638,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 9915,
+    "Title": "I-90 at MP 59.3: Slide Curve",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/sc/090vc05930.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.356,
+    "DisplayLongitude": -121.315,
+    "CameraLocation": {
+      "RoadName": "I-90",
+      "MilePost": 59.3,
+      "Latitude": 47.356,
+      "Longitude": -121.315,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 9145,
+    "Title": "US 2 at MP 61.9: Old Faithful Avalanche Zone",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/nc/002vc06190.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.715,
+    "DisplayLongitude": -121.145,
+    "CameraLocation": {
+      "RoadName": "US 2",
+      "MilePost": 61.9,
+      "Latitude": 47.715,
+      "Longitude": -121.145,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 8063,
+    "Title": "US 2 at MP 64.3: West Stevens Pass - Ski Lodge",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/nc/002vc06430.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.7455,
+    "DisplayLongitude": -121.09,
+    "CameraLocation": {
+      "RoadName": "US 2",
+      "MilePost": 64.3,
+      "Latitude": 47.7455,
+      "Longitude": -121.09,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 8062,
+    "Title": "US 2 at MP 64.6: East Stevens Pass Summit",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/nc/002vc06458.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.746,
+    "DisplayLongitude": -121.085,
+    "CameraLocation": {
+      "RoadName": "US 2",
+      "MilePost": 64.6,
+      "Latitude": 47.746,
+      "Longitude": -121.085,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 9464,
+    "Title": "US 12 at MP 150.9: White Pass Summit",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/sc/012vc15095.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 46.6385,
+    "DisplayLongitude": -121.3925,
+    "CameraLocation": {
+      "RoadName": "US 12",
+      "MilePost": 150.9,
+      "Latitude": 46.6385,
+      "Longitude": -121.3925,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 1138,
+    "Title": "US 97 at MP 163.8: Blewett Pass Summit",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/nc/097vc16375.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.335,
+    "DisplayLongitude": -120.5786,
+    "CameraLocation": {
+      "RoadName": "US 97",
+      "MilePost": 163.8,
+      "Latitude": 47.335,
+      "Longitude": -120.5786,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 9999,
+    "Title": "I-90 at MP 52.1: Inactive test camera",
+    "Description": null,
+    "ImageURL": "https://images.wsdot.wa.gov/sc/090VC05210.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": false,
+    "Region": "SC",
+    "DisplayLatitude": 47.4246,
+    "DisplayLongitude": -121.4137,
+    "CameraLocation": {
+      "RoadName": "I-90",
+      "MilePost": 52.1,
+      "Latitude": 47.4246,
+      "Longitude": -121.4137,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "CameraID": 9998,
+    "Title": "Camera pointing at a non-WSDOT host",
+    "Description": null,
+    "ImageURL": "https://evil.example.com/summit.jpg",
+    "ImageWidth": 320,
+    "ImageHeight": 239,
+    "IsActive": true,
+    "Region": "SC",
+    "DisplayLatitude": 47.4244,
+    "DisplayLongitude": -121.4139,
+    "CameraLocation": {
+      "RoadName": "I-90",
+      "MilePost": 52,
+      "Latitude": 47.4244,
+      "Longitude": -121.4139,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "Title": "Malformed camera without an id",
+    "ImageURL": "https://images.wsdot.wa.gov/sc/090VC00000.jpg",
+    "IsActive": true,
+    "DisplayLatitude": 47.42,
+    "DisplayLongitude": -121.41
+  }
+]

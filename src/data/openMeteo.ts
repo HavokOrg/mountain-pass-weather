@@ -1,5 +1,5 @@
-import type { Coordinates } from '../config';
-import { DataError, num, numOrNullArray, record, str, strArray } from './validate';
+import type { Coordinates } from './passConfig.ts';
+import { DataError, num, numOrNullArray, record, str, strArray } from './validate.ts';
 
 export const OPEN_METEO_ENDPOINT = 'https://api.open-meteo.com/v1/forecast';
 export const TIMEZONE = 'America/Los_Angeles';

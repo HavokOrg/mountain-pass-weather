@@ -1,0 +1,151 @@
+[
+  {
+    "AlertID": 502,
+    "HeadlineDescription": "Rock slide cleanup on westbound I-90 at milepost 58. Expect brief delays.",
+    "ExtendedDescription": "",
+    "EventCategory": "Maintenance",
+    "EventStatus": "Open",
+    "Priority": "Medium",
+    "Region": "Central",
+    "County": null,
+    "StartTime": "/Date(1794535200000-0800)/",
+    "EndTime": null,
+    "LastUpdatedTime": "/Date(1794547800000-0800)/",
+    "StartRoadwayLocation": {
+      "RoadName": "I-90",
+      "MilePost": 58,
+      "Latitude": 47.3655,
+      "Longitude": -121.329,
+      "Direction": null,
+      "Description": null
+    },
+    "EndRoadwayLocation": {
+      "RoadName": "I-90",
+      "MilePost": 58,
+      "Latitude": 47.3655,
+      "Longitude": -121.329,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "AlertID": 501,
+    "HeadlineDescription": "Collision blocking the right lane of eastbound I-90 at milepost 54 near Hyak.",
+    "ExtendedDescription": "",
+    "EventCategory": "Collision",
+    "EventStatus": "Open",
+    "Priority": "High",
+    "Region": "Central",
+    "County": null,
+    "StartTime": "/Date(1794551400000-0800)/",
+    "EndTime": null,
+    "LastUpdatedTime": "/Date(1794552300000-0800)/",
+    "StartRoadwayLocation": {
+      "RoadName": "I-90",
+      "MilePost": 54,
+      "Latitude": 47.406,
+      "Longitude": -121.38,
+      "Direction": null,
+      "Description": null
+    },
+    "EndRoadwayLocation": {
+      "RoadName": "I-90",
+      "MilePost": 54.6,
+      "Latitude": 47.399,
+      "Longitude": -121.37,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "AlertID": 503,
+    "HeadlineDescription": "US 2 is closed in both directions at Stevens Pass for avalanche control.",
+    "ExtendedDescription": "",
+    "EventCategory": "Closure",
+    "EventStatus": "Open",
+    "Priority": "Highest",
+    "Region": "Central",
+    "County": null,
+    "StartTime": "/Date(1794550500000-0800)/",
+    "EndTime": null,
+    "LastUpdatedTime": "/Date(1794552600000-0800)/",
+    "StartRoadwayLocation": {
+      "RoadName": "US 2",
+      "MilePost": 64,
+      "Latitude": 47.745,
+      "Longitude": -121.095,
+      "Direction": null,
+      "Description": null
+    },
+    "EndRoadwayLocation": {
+      "RoadName": "US 2",
+      "MilePost": 65,
+      "Latitude": 47.746,
+      "Longitude": -121.08,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "AlertID": 504,
+    "HeadlineDescription": "Stalled vehicle on northbound I-5 in Seattle.",
+    "ExtendedDescription": "",
+    "EventCategory": "Collision",
+    "EventStatus": "Open",
+    "Priority": "Low",
+    "Region": "Central",
+    "County": null,
+    "StartTime": "/Date(1794552000000-0800)/",
+    "EndTime": null,
+    "LastUpdatedTime": "/Date(1794552900000-0800)/",
+    "StartRoadwayLocation": {
+      "RoadName": "I-5",
+      "MilePost": 165,
+      "Latitude": 47.6062,
+      "Longitude": -122.3321,
+      "Direction": null,
+      "Description": null
+    },
+    "EndRoadwayLocation": {
+      "RoadName": "I-5",
+      "MilePost": 165,
+      "Latitude": 47.6062,
+      "Longitude": -122.3321,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "AlertID": 505,
+    "HeadlineDescription": "Alert with unknown location.",
+    "ExtendedDescription": "",
+    "EventCategory": "Weather",
+    "EventStatus": "Open",
+    "Priority": "Medium",
+    "Region": "Central",
+    "County": null,
+    "StartTime": "/Date(1794549600000-0800)/",
+    "EndTime": null,
+    "LastUpdatedTime": "/Date(1794549600000-0800)/",
+    "StartRoadwayLocation": {
+      "RoadName": "",
+      "MilePost": 0,
+      "Latitude": 0,
+      "Longitude": 0,
+      "Direction": null,
+      "Description": null
+    },
+    "EndRoadwayLocation": {
+      "RoadName": "",
+      "MilePost": 0,
+      "Latitude": 0,
+      "Longitude": 0,
+      "Direction": null,
+      "Description": null
+    }
+  },
+  {
+    "HeadlineDescription": "Malformed alert without an id",
+    "Priority": "High"
+  }
+]
