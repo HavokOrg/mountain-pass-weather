@@ -147,6 +147,11 @@ export function upcomingHours(
   return start === -1 ? [] : hourly.slice(start, start + count);
 }
 
+/** A single attempt got no complete response in time. */
+export class TimeoutError extends Error {
+  override name = 'TimeoutError';
+}
+
 function delay(ms: number, signal?: AbortSignal): Promise<void> {
   return new Promise((resolve, reject) => {
     const timer = setTimeout(resolve, ms);
@@ -161,31 +166,58 @@ function delay(ms: number, signal?: AbortSignal): Promise<void> {
   });
 }
 
+/** fetch() rejects with TypeError when the network fails; TimeoutError is our own per-attempt limit. */
+function isNetworkFailure(error: unknown): boolean {
+  return error instanceof TypeError || error instanceof TimeoutError;
+}
+
+async function attempt(url: string, timeoutMs: number, outer?: AbortSignal): Promise<Forecast> {
+  const controller = new AbortController();
+  const forwardAbort = () => controller.abort(outer?.reason);
+  if (outer?.aborted) forwardAbort();
+  else outer?.addEventListener('abort', forwardAbort, { once: true });
+
+  const timer = setTimeout(
+    () => controller.abort(new TimeoutError(`No response within ${timeoutMs / 1000}s`)),
+    timeoutMs,
+  );
+  try {
+    const response = await fetch(url, {
+      signal: controller.signal,
+      credentials: 'omit',
+      referrerPolicy: 'no-referrer',
+    });
+    if (!response.ok) throw new DataError(`Open-Meteo responded with HTTP ${response.status}`);
+    return parseForecast(await response.json());
+  } finally {
+    clearTimeout(timer);
+    outer?.removeEventListener('abort', forwardAbort);
+  }
+}
+
 export interface FetchOptions {
-  /** Extra attempts after a network failure (connection reset, offline blip). */
+  /** Extra attempts after a network failure or timeout. */
   retries?: number;
+  /** Base wait between attempts; grows linearly (1x, 2x, ...). */
   retryDelayMs?: number;
+  /** Per-attempt limit, covering both the connection and the response body. */
+  timeoutMs?: number;
 }
 
 export async function fetchForecast(
   point: ForecastPoint,
   signal?: AbortSignal,
-  { retries = 1, retryDelayMs = 1500 }: FetchOptions = {},
+  { retries = 2, retryDelayMs = 750, timeoutMs = 6000 }: FetchOptions = {},
 ): Promise<Forecast> {
-  for (let attempt = 0; ; attempt++) {
+  const url = buildForecastUrl(point);
+  for (let n = 0; ; n++) {
     try {
-      const response = await fetch(buildForecastUrl(point), {
-        signal: signal ?? null,
-        credentials: 'omit',
-        referrerPolicy: 'no-referrer',
-      });
-      if (!response.ok) throw new DataError(`Open-Meteo responded with HTTP ${response.status}`);
-      return parseForecast(await response.json());
+      return await attempt(url, timeoutMs, signal);
     } catch (error) {
-      // fetch() rejects with TypeError on network failure. Retry only that, never bad data or aborts.
-      const retryable = error instanceof TypeError && !signal?.aborted && attempt < retries;
+      // Retry only network failures and timeouts: never bad data, HTTP errors, or a caller's abort.
+      const retryable = isNetworkFailure(error) && !signal?.aborted && n < retries;
       if (!retryable) throw error;
-      await delay(retryDelayMs, signal);
+      await delay(retryDelayMs * (n + 1), signal);
     }
   }
 }
