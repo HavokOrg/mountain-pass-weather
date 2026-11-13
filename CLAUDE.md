@@ -8,6 +8,14 @@ An Apple Weather-inspired static web app for Washington mountain passes (Snoqual
 - `npm run check`: typecheck + lint + test + build. Run before every commit.
 - `npm test`: Vitest (tests live in `tests/`, fixtures in `tests/fixtures/`)
 - `npm run build && npm run preview`: serves the production build, including the CSP
+- `npm run sample:wsdot`: writes `public/data/wsdot.json` from `tests/fixtures/wsdot`, with dates shifted to now (no key needed)
+- `npm run fetch:wsdot`: fetches live WSDOT data. Needs `WSDOT_ACCESS_CODE` in the env or a git-ignored `.env.local`.
+
+## Data flow
+
+- `scripts/fetch-wsdot.ts` runs in the deploy workflow every ~10 min. It calls `src/data/wsdot/parse.ts` and then `snapshot.ts`, and writes `public/data/wsdot.json`, which is never committed.
+- Node 24 runs the script as TypeScript directly. Modules it shares with the app (`src/data/passConfig.ts`, `validate.ts`, `geo.ts`, `wsdot/parse.ts`, `wsdot/snapshot.ts`, `wsdot/types.ts`) must use explicit `.ts` import paths, erasable TypeScript only, and no browser APIs or JSON imports.
+- The browser loads the snapshot with `src/data/wsdot/client.ts` and validates it again.
 
 ## Architecture
 

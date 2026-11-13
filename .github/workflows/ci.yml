@@ -29,4 +29,6 @@ jobs:
       - run: npm run typecheck
       - run: npm run lint
       - run: npm test
+      - name: Smoke-test the WSDOT fetch script on sample data
+        run: npm run sample:wsdot
       - run: npm run build

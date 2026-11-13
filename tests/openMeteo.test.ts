@@ -6,8 +6,8 @@ import {
   fetchForecast,
   parseForecast,
   upcomingHours,
-} from '../src/data/openMeteo';
-import { DataError } from '../src/data/validate';
+} from '../src/data/openMeteo.ts';
+import { DataError } from '../src/data/validate.ts';
 
 type Mutable = Record<string, Record<string, unknown>>;
 const freshFixture = () => structuredClone(fixture) as unknown as Mutable;

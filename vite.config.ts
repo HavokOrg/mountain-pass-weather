@@ -13,7 +13,7 @@ const CSP = [
   "default-src 'self'",
   "script-src 'self'",
   "style-src 'self'",
-  "img-src 'self' data:",
+  "img-src 'self' data: https://images.wsdot.wa.gov",
   "connect-src 'self' https://api.open-meteo.com",
   "font-src 'self'",
   "manifest-src 'self'",

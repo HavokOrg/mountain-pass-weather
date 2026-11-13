@@ -3,8 +3,10 @@ name: Deploy
 on:
   push:
     branches: [main]
+  schedule:
+    # Refresh WSDOT data about every 10 minutes. Odd minutes avoid GitHub's busy top of the hour.
+    - cron: '3,13,23,33,43,53 * * * *'
   workflow_dispatch:
-  # Phase 2 adds a schedule here (every ~10 min at odd minutes) to refresh WSDOT data.
 
 # No default token permissions; each job asks for only what it needs.
 permissions: {}
@@ -29,6 +31,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+      - name: Fetch WSDOT snapshot
+        # The secret is exposed to this step only. The script never logs request URLs and
+        # refuses to write output containing the code. With no secret, it publishes an
+        # "unavailable" snapshot and the deploy continues.
+        env:
+          WSDOT_ACCESS_CODE: ${{ secrets.WSDOT_ACCESS_CODE }}
+        run: node scripts/fetch-wsdot.ts
       - run: npm run build
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:

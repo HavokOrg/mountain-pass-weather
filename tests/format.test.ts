@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { describeWeather } from '../src/data/weatherCodes';
-import { formatAge, formatFeet, formatHourLabel, formatTemp, isStale } from '../src/ui/format';
+import { describeWeather } from '../src/data/weatherCodes.ts';
+import { formatAge, formatFeet, formatHourLabel, formatTemp, isStale } from '../src/ui/format.ts';
 
 describe('formatTemp', () => {
   it('rounds to whole degrees', () => {

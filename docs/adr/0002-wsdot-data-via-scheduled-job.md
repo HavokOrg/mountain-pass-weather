@@ -23,6 +23,26 @@ Option 3.
 - Camera images aren't proxied. The browser loads them directly from `images.wsdot.wa.gov`, which WSDOT refreshes about every 5 minutes.
 - The app reads the same JSON shape whatever produces it, so option 2 can be added later without restructuring.
 
+## Implementation (Phase 2)
+
+- **Script:** `scripts/fetch-wsdot.ts` fetches five REST feeds: MountainPassConditions, HighwayCameras, HighwayAlerts, TravelTimes and WeatherInformation. It parses them as untrusted input (`src/data/wsdot/parse.ts`) and builds a per-pass snapshot (`snapshot.ts`).
+- **Matching:**
+  - Pass reports by `MountainPassId`, falling back to the nearest report within 10 mi.
+  - Weather stations by `StationID`.
+  - Cameras: the nearest 6 within 10 mi of the summit, unless `wsdot.cameraIds` hand-picks them.
+  - Alerts within each pass's `alertRadiusMiles`, sorted by priority.
+  - Travel times by `TravelTimeID`.
+  - The IDs come from WSDOT's public RSS feeds.
+- **Minimal output:** the snapshot carries only display fields. Raw coordinates, extended descriptions and other WSDOT fields are dropped. Camera URLs must be `https://images.wsdot.wa.gov/…`, and the browser re-checks this.
+- **Secret handling:**
+  - The secret is exposed to the fetch step only.
+  - Failures are reported by feed name and HTTP status, never by URL.
+  - A 401 (bad code) is not retried.
+  - The script refuses to write a snapshot that contains the code.
+- **Failure behavior:** the script always writes a snapshot. With no secret, or if every feed fails, its status is `unavailable`. The site then shows the forecast plus a notice linking to WSDOT.
+- **Keep-alive:** `.github/workflows/keepalive.yml` runs monthly and calls `PUT /actions/workflows/{id}/enable` for the scheduled workflows, which resets GitHub's 60-day inactivity timer without commits. GitHub also emails the repo admin before it disables a schedule.
+- **CI:** CI runs the script against sample data (`npm run sample:wsdot`) as a smoke test.
+
 ## Consequences
 
 - WSDOT data can be 10-30 minutes old because GitHub's schedule is best-effort. The UI shows "Updated X min ago" and flags anything older than 30 minutes.
