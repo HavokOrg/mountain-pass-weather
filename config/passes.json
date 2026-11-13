@@ -1,0 +1,57 @@
+{
+  "$comment": "Passes in swipe order (first = home screen). Summit coordinates are approximate until verified against the WSDOT MountainPassConditions feed in Phase 2. Station IDs and avalanche zones come from WSDOT and avalanche.org.",
+  "passes": [
+    {
+      "id": "snoqualmie",
+      "name": "Snoqualmie Pass",
+      "highway": "I-90",
+      "summit": { "latitude": 47.4245, "longitude": -121.4138, "elevationFt": 3022 },
+      "approaches": [
+        { "side": "west", "name": "North Bend", "latitude": 47.4957, "longitude": -121.7868 },
+        { "side": "east", "name": "Cle Elum", "latitude": 47.1954, "longitude": -120.9393 }
+      ],
+      "wsdot": { "weatherStationId": 2085 },
+      "avalancheZone": { "id": 3028, "name": "Snoqualmie Pass" },
+      "alertRadiusMiles": 20
+    },
+    {
+      "id": "stevens",
+      "name": "Stevens Pass",
+      "highway": "US 2",
+      "summit": { "latitude": 47.7465, "longitude": -121.0891, "elevationFt": 4061 },
+      "approaches": [
+        { "side": "west", "name": "Skykomish", "latitude": 47.7093, "longitude": -121.359 },
+        { "side": "east", "name": "Leavenworth", "latitude": 47.5962, "longitude": -120.6615 }
+      ],
+      "wsdot": { "weatherStationId": 1984 },
+      "avalancheZone": { "id": 3024, "name": "Stevens Pass" },
+      "alertRadiusMiles": 20
+    },
+    {
+      "id": "white",
+      "name": "White Pass",
+      "highway": "US 12",
+      "summit": { "latitude": 46.6385, "longitude": -121.3925, "elevationFt": 4500 },
+      "approaches": [
+        { "side": "west", "name": "Packwood", "latitude": 46.6076, "longitude": -121.6712 },
+        { "side": "east", "name": "Naches", "latitude": 46.7313, "longitude": -120.699 }
+      ],
+      "wsdot": { "weatherStationId": 2139 },
+      "avalancheZone": { "id": 3023, "name": "West Slopes South" },
+      "alertRadiusMiles": 20
+    },
+    {
+      "id": "blewett",
+      "name": "Blewett Pass",
+      "highway": "US 97",
+      "summit": { "latitude": 47.335, "longitude": -120.5786, "elevationFt": 4102 },
+      "approaches": [
+        { "side": "south", "name": "Cle Elum", "latitude": 47.1954, "longitude": -120.9393 },
+        { "side": "north", "name": "Peshastin", "latitude": 47.5818, "longitude": -120.6151 }
+      ],
+      "wsdot": { "weatherStationId": 2108 },
+      "avalancheZone": { "id": 3030, "name": "East Slopes Central" },
+      "alertRadiusMiles": 20
+    }
+  ]
+}

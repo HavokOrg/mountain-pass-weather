@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Pass Weather">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a66c4"/>
+      <stop offset="1" stop-color="#7fb8f0"/>
+    </linearGradient>
+    <clipPath id="tile">
+      <rect width="512" height="512" rx="112"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#tile)">
+    <rect width="512" height="512" fill="url(#sky)"/>
+    <!-- Two peaks with a notch (the pass) between them -->
+    <path d="M-10 420 L150 196 L222 292 L256 256 L290 292 L362 168 L522 400 V522 H-10 Z" fill="#26476f"/>
+    <!-- Snowcaps -->
+    <path d="M150 196 L186 245 L170 238 L154 252 L138 236 L116 243 Z" fill="#fff"/>
+    <path d="M362 168 L403 228 L386 220 L372 234 L352 218 L327 228 Z" fill="#fff"/>
+    <!-- Road winding up through the notch -->
+    <path d="M196 530 C 250 450, 336 420, 282 360 S 248 292, 256 258" fill="none" stroke="#f4f7fb" stroke-width="22" stroke-linecap="round"/>
+    <path d="M196 530 C 250 450, 336 420, 282 360 S 248 292, 256 258" fill="none" stroke="#f5c542" stroke-width="4" stroke-dasharray="14 14"/>
+  </g>
+</svg>
