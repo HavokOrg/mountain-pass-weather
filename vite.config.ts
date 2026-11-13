@@ -40,7 +40,7 @@ function contentSecurityPolicy(): Plugin {
 }
 
 export default defineConfig({
-  // Project site: https://pass-weather.github.io/mountain-pass-weather/
+  // Project site: https://havokorg.github.io/mountain-pass-weather/
   base: '/mountain-pass-weather/',
   plugins: [contentSecurityPolicy()],
   build: {

@@ -1,6 +1,6 @@
 # Pass Weather
 
-An Apple Weather-inspired static web app for Washington mountain passes (Snoqualmie, Stevens, White, Blewett). It shows Open-Meteo forecasts plus live WSDOT data, and is hosted on GitHub Pages at `https://pass-weather.github.io/mountain-pass-weather/`.
+An Apple Weather-inspired static web app for Washington mountain passes (Snoqualmie, Stevens, White, Blewett). It shows Open-Meteo forecasts plus live WSDOT data, and is hosted on GitHub Pages at `https://havokorg.github.io/mountain-pass-weather/`.
 
 ## Commands
 

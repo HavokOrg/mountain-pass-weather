@@ -2,7 +2,7 @@
 
 Weather and live road conditions for Washington's mountain passes (**Snoqualmie, Stevens, White and Blewett**), in a layout inspired by Apple Weather.
 
-**Live site:** https://pass-weather.github.io/mountain-pass-weather/
+**Live site:** https://havokorg.github.io/mountain-pass-weather/
 
 > **Not for safety decisions.** Conditions change fast in the mountains. Always check [WSDOT's mountain pass reports](https://wsdot.com/travel/real-time/mountainpasses) before you go.
 
