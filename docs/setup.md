@@ -38,7 +38,7 @@ You type the one-time code into your browser yourself. Claude never sees your pa
 - [ ] Create the public repo `HavokOrg/mountain-pass-weather` and push `main`
 - [ ] **Pages:** source = GitHub Actions
 - [ ] **Actions:** default workflow token permission = read-only. Actions may not create or approve pull requests.
-- [ ] **Org Actions policy:** allow only actions created by GitHub (we use only `actions/*`)
+- [ ] **Actions policy (repo level):** allow only actions created by GitHub (we use only `actions/*`). Setting it at the repo level avoids needing the `admin:org` scope.
 - [ ] **Security:** Dependabot alerts and security updates, secret scanning, push protection, private vulnerability reporting
 - [ ] **Ruleset on `main`:** require a pull request, require the `CI / check` status to pass, block force-pushes and deletion
 
