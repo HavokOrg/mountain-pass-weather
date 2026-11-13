@@ -1,6 +1,6 @@
 import './styles/main.css';
 import { PASSES } from './config';
-import { fetchForecast } from './data/openMeteo';
+import { TimeoutError, fetchForecast } from './data/openMeteo';
 import { DataError } from './data/validate';
 import { refreshAges, renderError, renderForecast, renderLoading } from './ui/render';
 
@@ -17,7 +17,10 @@ let inFlight: AbortController | null = null;
 function describeError(error: unknown): string {
   if (!navigator.onLine) return 'You appear to be offline.';
   if (error instanceof DataError) return 'The forecast service sent data we did not expect.';
-  return "Couldn't reach the forecast service. Check your connection and try again.";
+  if (error instanceof TimeoutError) {
+    return "The forecast service isn't responding right now. Try again in a minute.";
+  }
+  return "Couldn't reach the forecast service. It may be busy; try again in a minute.";
 }
 
 async function load(showLoading: boolean): Promise<void> {

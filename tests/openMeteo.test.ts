@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import fixture from './fixtures/open-meteo-snoqualmie.json';
 import {
+  TimeoutError,
   buildForecastUrl,
   fetchForecast,
   parseForecast,
@@ -130,22 +131,59 @@ describe('fetchForecast', () => {
     });
   });
 
-  it('retries once after a network failure', async () => {
+  /** A fetch that never answers, but rejects (like the real one) when its signal aborts. */
+  const hangingFetch = (_input: RequestInfo | URL, init?: RequestInit) =>
+    new Promise<Response>((_resolve, reject) => {
+      init?.signal?.addEventListener('abort', () => reject(init.signal?.reason));
+    });
+
+  const fast = { retryDelayMs: 0, timeoutMs: 20 };
+
+  it('retries after network failures', async () => {
     const fetchMock = vi
-      .fn()
+      .fn<typeof fetch>()
+      .mockRejectedValueOnce(new TypeError('Failed to fetch'))
       .mockRejectedValueOnce(new TypeError('Failed to fetch'))
       .mockResolvedValueOnce(ok());
     vi.stubGlobal('fetch', fetchMock);
-    const forecast = await fetchForecast(point, undefined, { retryDelayMs: 0 });
-    expect(fetchMock).toHaveBeenCalledTimes(2);
+    const forecast = await fetchForecast(point, undefined, fast);
+    expect(fetchMock).toHaveBeenCalledTimes(3);
     expect(forecast.current.temperatureF).toBe(31.6);
   });
 
-  it('gives up after the retry', async () => {
-    const fetchMock = vi.fn().mockRejectedValue(new TypeError('Failed to fetch'));
+  it('gives up after two retries', async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockRejectedValue(new TypeError('Failed to fetch'));
     vi.stubGlobal('fetch', fetchMock);
-    await expect(fetchForecast(point, undefined, { retryDelayMs: 0 })).rejects.toThrow(TypeError);
+    await expect(fetchForecast(point, undefined, fast)).rejects.toThrow(TypeError);
+    expect(fetchMock).toHaveBeenCalledTimes(3);
+  });
+
+  it('times out a hanging request and retries it', async () => {
+    const fetchMock = vi
+      .fn<typeof fetch>()
+      .mockImplementationOnce(hangingFetch)
+      .mockResolvedValueOnce(ok());
+    vi.stubGlobal('fetch', fetchMock);
+    const forecast = await fetchForecast(point, undefined, fast);
     expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(forecast.current.weatherCode).toBe(73);
+  });
+
+  it('reports a TimeoutError when every attempt hangs', async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockImplementation(hangingFetch);
+    vi.stubGlobal('fetch', fetchMock);
+    await expect(fetchForecast(point, undefined, fast)).rejects.toThrow(TimeoutError);
+    expect(fetchMock).toHaveBeenCalledTimes(3);
+  });
+
+  it("stops immediately when the caller aborts, without retrying", async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockImplementation(hangingFetch);
+    vi.stubGlobal('fetch', fetchMock);
+    const controller = new AbortController();
+    const pending = fetchForecast(point, controller.signal, { retryDelayMs: 0, timeoutMs: 5000 });
+    controller.abort(new Error('user navigated away'));
+    await expect(pending).rejects.toThrow('user navigated away');
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
   it('does not retry when the data itself is bad', async () => {
